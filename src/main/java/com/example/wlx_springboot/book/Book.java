@@ -8,15 +8,25 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 @Component
-@ConfigurationProperties(prefix = "book")
 public class Book {
-    String name;
-    String author;
-    Float price;
-    Integer id;
+   private String name;
+   private String author;
+   private Float price;
+   private Integer id;
     @JsonIgnore
     @JsonFormat(pattern ="yyyy-MM-dd" )
-    Date publicationDate ;
+   private Date publicationDate ;
+
+    public Book(String name, String author, Float price, Integer id, Date publicationDate) {
+        this.name = name;
+        this.author = author;
+        this.price = price;
+        this.id = id;
+        this.publicationDate = publicationDate;
+    }
+
+    public Book() {
+    }
 
     public String getName() {
         return name;
@@ -42,6 +52,14 @@ public class Book {
         this.price = price;
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Date getPublicationDate() {
         return publicationDate;
     }
@@ -49,12 +67,4 @@ public class Book {
     public void setPublicationDate(Date publicationDate) {
         this.publicationDate = publicationDate;
     }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    public Integer getId()
-        {
-            return id;
-        }
 }

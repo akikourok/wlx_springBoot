@@ -7,10 +7,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class BookDao {
-    @Autowired
-    JdbcTemplate jdbcTemplate;
-    public int addBook(Book book)
-    {
-        return jdbcTemplate.update("Insert INTO book(name, anthor) values (?,?)",book.getName(),book.getAuthor());
-    }
+//    @Autowired
+//    JdbcTemplate jdbcTemplate;
+//    public int addBook(Book book)
+//    {
+//        return jdbcTemplate.update("Insert INTO book(name, anthor) values (?,?)",book.getName(),book.getAuthor());
+//    }
 }
