@@ -11,16 +11,16 @@ import java.util.Date;
 public class Book {
    private String name;
    private String author;
-   private Float price;
+
    private Integer id;
     @JsonIgnore
     @JsonFormat(pattern ="yyyy-MM-dd" )
    private Date publicationDate ;
 
-    public Book(String name, String author, Float price, Integer id, Date publicationDate) {
+    public Book(String name, String author,  Integer id, Date publicationDate) {
         this.name = name;
         this.author = author;
-        this.price = price;
+
         this.id = id;
         this.publicationDate = publicationDate;
     }
@@ -44,13 +44,6 @@ public class Book {
         this.author = author;
     }
 
-    public Float getPrice() {
-        return price;
-    }
-
-    public void setPrice(Float price) {
-        this.price = price;
-    }
 
     public Integer getId() {
         return id;
